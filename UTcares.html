@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utcares Web Design</title>
+    <link rel="stylesheet" href="UTcares.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="logo">UT💙💜</div>
+        <nav>
+           <div class="navbar">
+             <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">DESIGN</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+           </div>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Type to search">
+            <button>Search</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-content">
+        <div class="text-section">
+            <h1>Web design & <br> 
+            <span>Development</span> <br> Course</h1>
+            <p>
+                Gaining mastery in web develpment hasn't been an easy journey <br>
+                but nevertheless,  WE MOVE <br>
+               Because as we rise by lifting others <strong>UT-cares💙💙💜</strong>
+            </p>
+            <button class="join-btn">JOIN US</button>
+        </div>
+
+        <div class="popup-btn-section">
+            <button id="show-login" class="join-btn-2">Login</button>
+        </div>
+
+        <div class="login-box" id="login-popup">
+            <span class="close-btn" id="close-login">&times;</span>
+            <h2>Login Here</h2>
+            <form>
+                <input type="email" placeholder="Enter Email here" required>
+                <input type="password" placeholder="Password here" required>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-text">
+                    <p>Don't have an account</p>
+                    <a href="#">Sign up here</a><br>
+                    <div class="login-text-2">
+                        <h4>Login with</h4>
+                         <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+    // Popup logic
+    const showLoginBtn = document.getElementById('show-login');
+    const loginPopup = document.getElementById('login-popup');
+    const closeLoginBtn = document.getElementById('close-login');
+
+    // Hide popup by default
+    loginPopup.style.display = 'none';
+
+    showLoginBtn.onclick = function() {
+        loginPopup.style.display = 'block';
+        loginPopup.classList.add('fade-in');
+        showLoginBtn.style.display = 'none';
+    };
+    closeLoginBtn.onclick = function() {
+        loginPopup.style.display = 'none';
+        loginPopup.classList.remove('fade-in');
+        showLoginBtn.style.display = 'inline-block';
+    };
+    window.onclick = function(event) {
+        if (event.target === loginPopup) {
+            loginPopup.style.display = 'none';
+            loginPopup.classList.remove('fade-in');
+            showLoginBtn.style.display = 'inline-block';
+        }
+    };
+    const toggleButton = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    });
+
+    </script>
+</body>
+</html>

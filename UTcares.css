@@ -359,5 +359,6 @@ h1, span, p {
     right: 20px;
     position: absolute;
     font-size: 1rem;
+    display: inline;
 }
 }
